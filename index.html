@@ -2,13 +2,25 @@
 <html>
 <head>
 <title>Example of Speech Recognition</title>
-<body>
-Hello.
-</body>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
  $("#commandbutton").click(function() {
+	 console.log("clicked")
+	 if (!('webkitSpeechRecognition' in window)) {
+  		upgrade();
+	} else {
+  		var recognition = new webkitSpeechRecognition();
+  		recognition.continuous = true;
+  		recognition.interimResults = true;
+
+  		recognition.onstart = function() { ... }
+  		recognition.onresult = function(event) { ... }
+  		recognition.onerror = function(event) { ... }
+  		recognition.onend = function() { ... }
+  		...
+		
  	var potentialcommand = $("#command").val();
 
  	console.log(potentialcommand);
@@ -33,7 +45,7 @@ $(document).ready(function() {
 
       	  $("a,input,button").each(function() {
       	    if($(this)[0].tagName == "INPUT") {
-      	    	// look for the text in INPUT fields
+      	    	// look for the in INPUT fields
       	    } else if() {
 
       	    }
@@ -72,7 +84,11 @@ $(document).ready(function() {
 </p>
 
 <p>
-<input type="button" value="cat"><br>
+<input type="button" value="
+			    
+			    
+			    
+			"><br>
 <a href="google.com">Google</a><br>
 <a href="cmu.edu">CMU</a><br>
 
