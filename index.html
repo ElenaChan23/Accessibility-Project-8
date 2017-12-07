@@ -15,7 +15,12 @@ $(document).ready(function() {
 	} else {
   		var recognition = new webkitSpeechRecognition();
   		recognition.continuous = true;
-  		recognition.interimResults = true;	
+  		recognition.interimResults = true;
+		
+		recognition.onstart = function() {console.log("hi")}
+ 		recognition.onresult = function(event) {console.log("heyo")}
+  		recognition.onerror = function(event) {console.log("hi2")}
+  		recognition.onend = function() {console.log("heyo2")}
 		
  	var potentialcommand = $("#command").val();
 
