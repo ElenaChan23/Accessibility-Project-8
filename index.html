@@ -174,17 +174,21 @@
 
       	  break;
       	case "scroll":
-	  $("body").append("<div class='scrolldown' value='down'>");
-  	  $(".scrolldown").click(function(){
-    	    $('html,body').animate({
-      	      scrollTop: $(document).scrollTop() + 100
-	    }, 2000);
-  	  })
+	  if final_transcript=="enter" {
+		  $("body").append("<div class='scrolldown' value='down'>");
+		  $(".scrolldown").click(function(){
+		    $('html,body').animate({
+		      scrollTop: $(document).scrollTop() + 100
+		    }, 2000);
+		  })
+	  }
       	  console.log("handling scroll`")
       	  break;
       	case "enter":
-      	  if($(this)[0].tagName == "INPUT") {
-      	    	$("#text).add($(this))
+	  if final_transcript=="enter" {
+		  if($(this)[0].tagName == "INPUT") {
+			$("#text).add($(this))
+	  }
       	  console.log("handling enter")
       	  break;
       	default:
