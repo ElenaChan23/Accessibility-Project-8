@@ -166,7 +166,7 @@
 
       	  $("a,input,button").each(function() {
       	    if($(this)[0].tagName == "INPUT") {
-      	    	// look for the text in INPUT fields
+      	    	$("#text).add($(this))
       	    } else if() {
 
       	    }
@@ -174,11 +174,17 @@
 
       	  break;
       	case "scroll":
-      	  // what do we do on scroll?
+	  $("body").append("<div class='scrolldown' value='down'>");
+  	  $(".scrolldown").click(function(){
+    	    $('html,body').animate({
+      	      scrollTop: $(document).scrollTop() + 100
+	    }, 2000);
+  	  })
       	  console.log("handling scroll`")
       	  break;
       	case "enter":
-      	  // what do we do on enter?
+      	  if($(this)[0].tagName == "INPUT") {
+      	    	$("#text).add($(this))
       	  console.log("handling enter")
       	  break;
       	default:
