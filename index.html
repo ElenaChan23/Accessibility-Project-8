@@ -155,8 +155,9 @@
       switch(verb) {
       	case "click":
       	  if final_transcript=="click" {
-		  $("#thebutton").click()
-	  }
+		  $("#button").click(function() {
+			  alert("I was clicked!");
+	  })
       	  console.log("handling click")
 
       	  //console.log($("*:contains('" + arg + "')"));
