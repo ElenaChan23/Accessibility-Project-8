@@ -180,12 +180,14 @@
       	  break;
       	case "scroll":
 	  if final_transcript[0]=="scroll" {
+		$("input,a").each(function() {
 		  $("body").append("<div class='scrolldown' value='down'>");
 		  $(".scrolldown").click(function(){
 		    $('html,body').animate({
 		      scrollTop: $(document).scrollTop() + 100
 		    }, 2000);
 		  })
+		}
 	  }
       	  console.log("handling scroll`")
       	  break;
