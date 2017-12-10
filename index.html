@@ -154,9 +154,10 @@
 
       switch(verb) {
       	case "click":
-      	  if final_transcript=="click" {
+      	  if final_transcript[0]=="click" {
 		  $("#button").click(function() {
 			  alert("I was clicked!");
+		  $("#button").click("#button")
 	  })
       	  console.log("handling click")
 
@@ -174,7 +175,7 @@
 
       	  break;
       	case "scroll":
-	  if final_transcript=="enter" {
+	  if final_transcript[0]=="scroll" {
 		  $("body").append("<div class='scrolldown' value='down'>");
 		  $(".scrolldown").click(function(){
 		    $('html,body').animate({
@@ -185,7 +186,7 @@
       	  console.log("handling scroll`")
       	  break;
       	case "enter":
-	  if final_transcript=="enter" {
+	  if final_transcript[0]=="enter" {
 		  if($(this)[0].tagName == "INPUT") {
 			$("#text).add($(this))
 	  }
